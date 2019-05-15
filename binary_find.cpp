@@ -1,5 +1,5 @@
 template <typename T>
-int binary_find(T *arr,T *end, T target)
+int binaryFind(T *arr,T *end, T target)
 {
     int low=0;
     int high=end-arr;
