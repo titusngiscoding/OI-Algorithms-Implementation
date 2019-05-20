@@ -17,9 +17,9 @@ struct SegmentTree
 		arr=in;
 		for(treeSize=1;treeSize<2*size;treeSize*=2);
 		tree.resize(treeSize);
-		recursionMake(0,size-1,0);
+		recursionSet(0,size-1,0);
 	}
-	void recursionMake(int start, int end, int index)
+	void recursionSet(int start, int end, int index)
 	{
 		
 		if(start==end)
@@ -29,8 +29,8 @@ struct SegmentTree
 		else
 		{
 			int mid=(start+end)/2;
-			recursionMake(start,mid,2*index+1);
-			recursionMake(mid+1,end,2*index+2);	
+			recursionSet(start,mid,2*index+1);
+			recursionSet(mid+1,end,2*index+2);	
 			tree[index]=calculateValue(tree[2*index+1],tree[2*index+2]);
 		}
 	}
@@ -76,3 +76,4 @@ struct SegmentTree
 		return ans;
 	}
 };
+
